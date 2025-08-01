@@ -1,0 +1,126 @@
+@font-face {
+    font-family: "myFont";
+    src: url(./Roboto-VariableFont_wdth\,wght.ttf);
+}
+:root{
+    font-family:'myFont','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:24px;
+}
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0px;
+    /* outline:2px solid red;  */
+}
+
+.container-all {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 150px 1fr;
+    grid-template-areas:
+        "nav top"
+        "nav projects";
+}
+.container-all > *{
+    padding:10px;
+}
+/*$$$$$$$$$$$$$$$$$$$ left sidebar css $$$$$$$$$$$$*/
+.container-nav {
+    grid-area: nav;
+    background-color: rgb(77, 203, 252);
+   
+}
+#nav-sidebar{
+    display:grid;
+    margin:20px;
+}
+#nav-sidebar > *{
+    margin:20px;
+}
+/* $$$$$$$$$$$$$$$$   top area css $$$$$$$$$$$$$$ */
+.container-top {
+    grid-area: top;
+    background-color: white;
+    display:grid;
+    grid-template-columns: 60% 1fr ;
+    grid-template-rows: 50%;
+    grid-template-areas: 
+        "greeting signature";
+}
+.container-top>*{
+    display:flex;
+    align-items:center;
+}
+.profile-picture{
+    margin:10px;
+    border-radius: 50%;
+    background-color: lightcyan;
+    border:1px solid black;
+    height:50px;
+    width:auto;
+}
+#searchBar-container{
+    grid-area: search-bar;
+}
+#signature{
+    grid-area:signature;
+}
+#tools{
+    grid-area:tools;
+}
+#greeting{
+    grid-area:greeting;
+}
+#share-btn{
+    background-color:royalblue;
+    color:white;
+    width:100px;
+    height:50px;
+    border-radius: 15px;
+}
+
+/*$$$$$$$$$$$$$$$$$$$  main section(projects) css  $$$$$$$$$$$$$*/
+.container-projects {
+    grid-area: projects;
+    background-color: rgb(234, 231, 231);
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows:50px;
+    grid-auto-rows: 1fr;
+    overflow-y: scroll;
+    gap:15px 15px;
+    padding-top:0; 
+}
+.container-projects a{
+    text-decoration: none;   
+    color: inherit;          
+    transition: none; 
+}
+.section{
+    padding:10px;
+    background-color:rgb(249, 206, 125);
+    display:flex;
+    flex-direction: column;
+    aspect-ratio: 1/1;
+    border-radius:25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#projects-title{
+    grid-column-start:1;
+    grid-column-end:3;
+    position:sticky;
+    top:0;
+    background-color: rgb(234, 231, 231);
+}
+
+.section img{
+    object-fit: cover;
+    height:50%;
+    width:auto;
+    max-width:100%;
+    border-radius: 25px;
+}
+
